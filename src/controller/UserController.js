@@ -19,9 +19,11 @@ module.exports = {
 
   async store (request, response) {
     const { name, birthDate, image } = request.body
+
     const user = await User.create({
       name, birthDate, image
     }) // Cria os dados / INSERT INTO
+
     return response.json(user)
   },
 
